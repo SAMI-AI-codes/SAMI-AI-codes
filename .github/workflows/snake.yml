@@ -1,4 +1,4 @@
-name: Generate snake animation
+name: snake
 on:
   schedule:
     - cron: "0 */12 * * *"
@@ -8,17 +8,19 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
-      - name: Generate the snake SVG
-        uses: Platane/snk/svg-only@v3
+      - uses: actions/checkout@v4
+      - uses: Platane/snk/svg-only@v3
         with:
           github_user_name: SAMI-AI-codes
-          outputs: dist/github-snake.svg
-      - name: Push snake SVG to output branch
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-          commit_message: "Update contribution snake"
-          keep_history: true
+          outputs: dist/snake.svg
+      - run: |
+          cp dist/snake.svg /tmp/
+          git config user.name b
+          git config user.email b@b.b
+          git checkout -B output
+          git rm -rf . || true
+          cp /tmp/snake.svg snake.svg
+          git add snake.svg
+          git commit -m u || true
+          git push -f origin output
