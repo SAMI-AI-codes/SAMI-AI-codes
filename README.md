@@ -45,6 +45,9 @@
 
 </div>
 
+<!--
+🐍 Contribution snake: add .github/workflows/snake.yml (workflow file) then uncomment this section.
+
 ### 🐍 Watch my contributions get eaten!
 
 <div align="center">
@@ -52,6 +55,7 @@
 <img src="https://raw.githubusercontent.com/SAMI-AI-codes/SAMI-AI-codes/output/github-snake.svg" alt="snake eating contributions" />
 
 </div>
+-->
 
 ### 📫 Let's Connect
 
